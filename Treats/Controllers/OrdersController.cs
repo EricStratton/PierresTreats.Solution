@@ -11,19 +11,45 @@ using System.Security.Claims;
 
 namespace Treats.Controllers
 {
+  [Authorize]
   public class OrdersController : Controller
   {
     private readonly TreatsContext _db;
+    private readonly UserManager<ApplicationUser> _userManager;
     
-    public OrdersController(TreatsContext db)
+    public OrdersController(UserManager<ApplicationUser> userManager, TreatsContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
 
-    public ActionResult Index()
+    public async Task<ActionResult> Index()
     {
-      List<Order> model = _db.Orders.ToList();
-      return View(model);
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      var userOrders = _db.Orders.Where(entry => entry.User.Id == currentUser.Id).ToList();
+      return View(userOrders);
+    }
+
+    public ActionResult Create()
+    {
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Type");
+      return View();
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> Create(Order order, int TreatId)
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      order.User = currentUser;
+      _db.Orders.Add(order);
+      if (TreatId != 0)
+      {
+        _db.Orders.Add(new Order() { TreatId = TreatId, OrderId = order.OrderId });
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
