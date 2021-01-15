@@ -43,7 +43,7 @@ namespace Treats.Controllers
         return View();
       }
     }
-    
+
     public ActionResult Login()
     {
         return View();
@@ -63,5 +63,11 @@ namespace Treats.Controllers
         }
     }
 
+    [HttpPost]
+    public async Task<ActionResult> LogOff()
+    {
+        await _signInManager.SignOutAsync();
+        return RedirectToAction("Index");
+    }
   }
 }
