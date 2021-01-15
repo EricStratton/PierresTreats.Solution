@@ -7,6 +7,19 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+.card  {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 6%;
+  background-color: rgba(182, 143, 143, 0.671);
+  border-radius: 30em;
+  width: 19em;
+}
+
+.button {
+  padding: 5%;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -44,6 +57,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  text-align: center;
 }
 .footer {
   position: absolute;
