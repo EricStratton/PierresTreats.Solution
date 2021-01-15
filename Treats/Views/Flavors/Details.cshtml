@@ -14,14 +14,20 @@
 {
   <p>No treats found</p>
 }
-<ul>
+<h4>Treats:</h4> 
+
 @foreach (var join in Model.Treats)
 {
-  <li>Description: @join.Treat.Type</li>
+  <h5>@join.Treat.Type</h5>
+    @using (Html.BeginForm("DeleteTreat", "Flavors"))
+      {
+        @Html.Hidden("joinId", @join.TreatFlavorId)
+        <input type="submit" value="Remove" />
+      }
 }
-</ul>
 
 
+<p>@Html.ActionLink("Add treat", "AddTreat", new { id = Model.FlavorId })<p>
 <p>@Html.ActionLink("Edit flavor", "Edit", new { id = Model.FlavorId })</p>
 <p>@Html.ActionLink("Delete flavor", "Delete", new { id = Model.FlavorId })</p>
 <p>@Html.ActionLink("Back to flavors", "Index")</p>
