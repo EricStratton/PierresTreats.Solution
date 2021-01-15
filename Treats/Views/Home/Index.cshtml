@@ -3,10 +3,24 @@
     Layout = "_Layout";
 }
 
+@using Treats.Models;
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <h3>Pierre's Treat Manager</h3>
 
     <h4><p>@Html.ActionLink("See flavors", "Index", "Flavors")</p></h4>
     <h4><p>@Html.ActionLink("See treats", "Index", "Treats")</p></h4>
+
+    <h4>Available Flavors:</h4>
+    @foreach (Flavor flavor in Model["flavor"])
+    {
+        <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</li>
+    }
+
+    <h4>Available Treats:</h4>
+    @foreach (Treat treat in Model["treat"])
+    {
+        <li>@Html.ActionLink($"{treat.Type}", "Details", new { id = treat.TreatId })</li>
+    }
 </div>
