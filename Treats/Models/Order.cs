@@ -15,5 +15,6 @@ namespace Treats.Models
     [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-mm-dd")]
     public DateTime OrderDate { get; set; }
     public Treat Treat { get; set; }
+    public virtual ApplicationUser User { get; set; }
   }
 }
