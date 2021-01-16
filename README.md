@@ -8,7 +8,7 @@
 
 Use this webpage to create multiple many-to-many relationships which are accessible from both sides of the relationship. A webpage for bakery workers to update the shop's available treats and flavor profiles, as well as a place for bakery workers to enter in upcoming orders.
 
-**_### Authentication:_** 
+**_Authentication:_** 
 
 **_Any employee can access the page to see what's available by either the specific treat or flavor profile. Create, Update, and Delete functionality of both treats and flavors are restricted to autheticated users. The entire order class is restriced to authenticated users and orders are added to the specific user who placed them, meaning employees can only access the orders they entered into the system._**
 
