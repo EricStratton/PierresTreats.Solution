@@ -14,7 +14,7 @@
 
 @foreach (Order order in Model)
 {
-  <li>@Html.ActionLink($"{order.OrderSize}", "Details", new { id = order.OrderId })</li>
+  <li>@Html.ActionLink($"{order.OrderDate}", "Details", new { id = order.OrderId })</li>
 }
 
 <p>@Html.ActionLink("Place new order", "Create")</p>

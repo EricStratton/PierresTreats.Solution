@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Treats.Models.Order
+
+<div class="container card">
+<h4>Order form</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.OrderDate)
+  @Html.TextBoxFor(model => model.OrderDate, new { @type = "date" })
+
+  @Html.Label("Select treat")
+  @Html.DropDownList("TreatId")
+
+  @Html.Label("Quantity")
+  @Html.TextBoxFor(model => model.OrderSize, new { @type = "number" })
+
+    <input type="submit" value="Add" />
+}
+<div>
+<p>@Html.ActionLink("Show all flavors", "Index")</p>
