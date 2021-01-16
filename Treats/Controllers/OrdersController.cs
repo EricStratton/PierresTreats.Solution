@@ -44,12 +44,15 @@ namespace Treats.Controllers
       var currentUser = await _userManager.FindByIdAsync(userId);
       order.User = currentUser;
       _db.Orders.Add(order);
-      if (TreatId != 0)
-      {
-        _db.Orders.Add(new Order() { TreatId = TreatId, OrderId = order.OrderId });
-      }
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+    {
+      var thisOrder = _db.Orders.FirstOrDefault(order => order.OrderId == id);
+      return View(thisOrder);
+    }
+
   }
 }
