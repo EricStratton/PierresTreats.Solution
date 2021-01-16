@@ -1,6 +1,6 @@
 ## Pierre's Treats -- Many-to-Many MySQL Database w/ Authentication
 
-### _Webpage to create many-to-many relationships between flavors and treats at Pierre's fictional bakery.Includes user authentication with Identity_
+### _Webpage to create many-to-many relationships between flavors and treats at Pierre's fictional bakery. Includes user authentication with Identity._
 
 ### _Created by: Eric Stratton_
 
