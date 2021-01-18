@@ -11,13 +11,11 @@ a.navbar-brand {
 .card  {
   margin-top: 5%;
   margin-bottom: 5%;
-  padding: 6%;
+  padding: 10%;
   background-color: rgba(182, 143, 143, 0.671);
   border-radius: 30em;
   width: 19em;
 }
-
-
 
 /* Sticky footer styles
 -------------------------------------------------- */
