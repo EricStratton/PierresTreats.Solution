@@ -51,6 +51,7 @@ namespace Treats.Controllers
     public ActionResult Details(int id)
     {
       var thisOrder = _db.Orders.FirstOrDefault(order => order.OrderId == id);
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Type");
       return View(thisOrder);
     }
 

@@ -7,9 +7,15 @@
 
 <h2>Order Details</h2>
 <hr />
-<h3></h3>
+<h3>Order for:  </h3>
+Quantity: @Html.DisplayFor(model => model.OrderSize) :
 
+TreatId: @Html.DisplayFor(model => model.TreatId)
 
+@* @if(ViewBag.TreadId == Model.TreatId)
+{
+  <p></p>
+} *@
 
 
 <p>@Html.ActionLink("Back to orders", "Index")</p>
