@@ -47,11 +47,11 @@ Use this webpage to create multiple many-to-many relationships which are accessi
 - Open command terminal on local device
 - Navigate to desktop in terminal using `$ cd desktop`
 - Copy repository link by clicking on green 'Code' icon and clicking the clipboard to the right of the url
-- Use command `$ git clone {specific_repository_URL}`
-- From desktop, run command `$ cd {newly-downloaded-directory}` to navigate to the installed directory
+- Use command `$ git clone https://github.com/EricStratton/PierresTreats.Solution`
+- From desktop, run command `$ cd PierresTreats.Solution` to navigate to the installed directory
 - Run command `$ code .` to open directory in default code editor
-- Run command `dotnet restore <rootDirectory>` in the console to upload necessary .NET Core files
-- Run command `$ cd <rootDirectory>` to navigate into the root directory to run console app
+- Run command `dotnet restore Treats>` in the console to upload necessary .NET Core files
+- Run command `$ cd Treats` to navigate into the root directory to run console app
 - Run command `$ donet run` 
 - If everything has gone correctly, the web application should run in the web browser at `localhost:5000`
 
@@ -70,11 +70,11 @@ Use this webpage to create multiple many-to-many relationships which are accessi
 
 - **_Page routes are named using RESTful notation as reflected in the pathway urls_**
 - `localhost:5000/`: landing page
-- `localhost:5000/vendors`: homepage for vendor profiles, displays all existing vendor profiles
-- `localhost:5000/vendoes/new`: page for creating a new vendor profile
-- `localhost:5000/vendors/{vendorId}`: page for select vendor profile, displays vendor description and existing orders for vendor
-- `localhost:5000/vendors/{vendorId}/orders/new`: page for select vendor to place new order
-- `localhost:5000/vendors/{vendorId}/orders/{orderId}`: page for specific order details
+- `localhost:5000/Flavors`: homepage for flavor profiles, displays all existing flavor profiles
+- `localhost:5000/Flavors/Create`: page for creating a new flavor profile
+- `localhost:5000/Flavors/Details/{FlavorId}`: page for select flavor profile, displays vendor description and existing orders for vendor
+- `localhost:5000/Flavors/AddTreat/{FlavorId}`: page to add Many-to-Many relationship with treats currently in database
+- `localhost:5000/Orders/`: page for authenticated user to add a new order
 
 
 ## Known Bugs/Issues
