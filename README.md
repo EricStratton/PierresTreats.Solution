@@ -50,7 +50,7 @@ Use this webpage to create multiple many-to-many relationships which are accessi
 - Use command `$ git clone https://github.com/EricStratton/PierresTreats.Solution`
 - From desktop, run command `$ cd PierresTreats.Solution` to navigate to the installed directory
 - Run command `$ code .` to open directory in default code editor
-- Run command `dotnet restore Treats>` in the console to upload necessary .NET Core files
+- Run command `dotnet restore Treats` in the console to upload necessary .NET Core files
 - Run command `$ cd Treats` to navigate into the root directory to run console app
 - Run command `$ donet run` 
 - If everything has gone correctly, the web application should run in the web browser at `localhost:5000`
